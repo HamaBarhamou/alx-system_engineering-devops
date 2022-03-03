@@ -1,2 +1,2 @@
 #!/bin/bash
-chown vincent . && chown vincent:staff 
+chown -h vincent _hello && chown -h _hello:staff 
