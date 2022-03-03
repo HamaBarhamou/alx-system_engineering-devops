@@ -1,0 +1,5 @@
+#!/bin/bash
+if pkg-config gtk+-2.0
+then
+    echo "gtk+ est installé sur votre système"
+fi
