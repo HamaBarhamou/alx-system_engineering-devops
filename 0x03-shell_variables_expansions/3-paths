@@ -1,2 +1,2 @@
 #!/bin/bash
-var=$($PATH 2>&1 | grep -o ":" | wc -l) | echo $(($var-1))
+$PATH 2>&1| tr ":" "\n" | uniq -u | wc -l
