@@ -3,7 +3,7 @@
 
 i=1
 
-until [ $i -gt 10 ]
+while (( i <= 10 ))
 do
   if [ $i -eq 9 ];
   then
