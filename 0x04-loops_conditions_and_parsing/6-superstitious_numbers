@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-# ouput "Best School" for 10
+# Displays numbers from 1 to 20 in addition to:
+#   "bad luck from China" for the 4th iteration
+#   "bad luck from Japan" for the 9th iteration
+#   "bad luck from Italy" for the 17th loop iteration
 
-COUNTER=0
-while [ $COUNTER -eq 0 ]                       
-do                                             
-   $COUNTER=$(( $COUNTER + 1 ))                
+count=1
 
-   case 5 in                             
-      1) echo "Raphael is cool, but rude.";;   
-      2) echo "Leonardo leads.";;              
-      3) echo "Michelangelo is a party dude.";;
-      4) echo "Donatello does machines.";;     
-      *) echo "Did you even watch the show?"   
-         $COUNTER=0                            
-         ;;                                    
-   esac                                        
+while [ $count -le 20 ]
+do
+  echo "$count"
+  case $count in
+    "4") echo "bad luck from China";;
+    "9") echo "bad luck from Japan";;
+    "17") echo "bad luck from Italy";;
+  esac
+  (( count++ ))
 done

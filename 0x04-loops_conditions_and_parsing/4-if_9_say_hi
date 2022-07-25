@@ -1,19 +1,12 @@
 #!/usr/bin/env bash
-# ouput "Best School" for 10
-
-i=1
-
-while (( i <= 10 ))
+# This script is displaying "Best School" and "Hi"
+x="0"
+while [ $x -lt 10 ]
 do
-  if (( i == 9 ));
-  then
-  	echo "Hi"
-
-  fi
-  
-  if (( i!= 9));
-  then
-  	echo "Best School"
-  fi
-  ((i++))
+    echo "Best School"
+    if ((x == 8))
+    then
+        echo "Hi"
+    fi
+    x=$((x+1))
 done
