@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#print the pid script 
+
+echo "$BASHPID"
