@@ -6,8 +6,7 @@ SOUS_DOMAINE=$2
 # fucntion
 function get_domaine_info {
     
-    echo "Domaine : $DOMAINE"
-    echo "Domaine : $SOUS_DOMAINE"
+    dig $DOMAINE NS #| grep -A1 "ANSWER SECTION:"
 }
 
 get_domaine_info
