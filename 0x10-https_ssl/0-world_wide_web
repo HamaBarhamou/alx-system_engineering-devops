@@ -1,3 +1,13 @@
 #!/usr/bin/env bash
 
-echo "hello world"
+DOMAINE=$1            
+SOUS_DOMAINE=$2
+
+# fucntion
+function get_domaine_info {
+    
+    echo "Domaine : $DOMAINE"
+    echo "Domaine : $SOUS_DOMAINE"
+}
+
+get_domaine_info
