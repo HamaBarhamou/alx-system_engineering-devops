@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
 
-DOMAINE=$1            
-SOUS_DOMAINE=$2
+subdomains_all=( "www" "lb-01" "web-01" "web-02" )
 
-# fucntion
-function get_domaine_info {
-    
-    dig $DOMAINE NS #| grep -A1 "ANSWER SECTION:"
+runDig () {
+    subdomain=$1
+    domain=$2
+
+    dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v s="$subdomain" 'BEGIN { FS = " " } ; { print "The subdomain " s " is a " $4 " record and points to " $5 }'
 }
 
-get_domaine_info
+if [ $# -eq 1 ]; then
+    domain="$1"
+    for i in "${subdomains_all[@]}"
+    do
+	runDig "$i" "$domain"
+    done
+elif [ $# -eq 2 ]; then
+    domain="$1"
+    subdomain="$2"
+    runDig "$subdomain" "$domain"
+fi
