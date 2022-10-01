@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# a commenter
 
 subdomains_all=( "www" "lb-01" "web-01" "web-02" )
 
