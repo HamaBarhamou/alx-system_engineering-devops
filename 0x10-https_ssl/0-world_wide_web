@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 # a commenter
-
 subdomains_all=( "www" "lb-01" "web-01" "web-02" )
-
 runDig () {
     subdomain=$1
     domain=$2
 
     dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v s="$subdomain" 'BEGIN { FS = " " } ; { print "The subdomain " s " is a " $4 " record and points to " $5 }'
 }
-
 if [ $# -eq 1 ]; then
     domain="$1"
     for i in "${subdomains_all[@]}"
