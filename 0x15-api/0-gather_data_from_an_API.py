@@ -10,7 +10,7 @@ if __name__ == '__main__':
     TOTAL_NUMBER_OF_TASKS = 0
     r = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                      .format(sys.argv[1]))
-    EMPLOYEE_NAME = r.json()['name']
+    EMPLOYEE_NAME = r.json().get('name')
     r = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
                      .format(sys.argv[1]))
     reponse = r.json()
