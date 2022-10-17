@@ -30,9 +30,6 @@ if __name__ == '__main__':
             tab.append(js)
         dic[id] = tab
 
-    print(dic)
-
-    """filename = sys.argv[1] + '.json'
-    data = {sys.argv[1]: tab}
+    filename = 'todo_all_employees.json'
     with open(filename, 'w') as mon_fichier:
-        json.dump(data, mon_fichier)"""
+        json.dump(dic, mon_fichier)
