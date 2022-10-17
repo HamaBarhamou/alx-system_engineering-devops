@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-import sys
 
 if __name__ == '__main__':
-    nb = sys.argv[1]
-    print(nb)
+    import requests
+    import sys
+
+    r = requests.get('https://jsonplaceholder.typicode.com/todos/{}'.format(sys.argv[1]))
+    print(r.status_code)
     pass
