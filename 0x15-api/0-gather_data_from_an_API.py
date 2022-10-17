@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """ Module of Gather data from an API"""
 
+import requests
+import sys
+
+
 if __name__ == '__main__':
-    import requests
-    import sys
 
     EMPLOYEE_NAME = "name"
     NUMBER_OF_DONE_TASKS = 0
