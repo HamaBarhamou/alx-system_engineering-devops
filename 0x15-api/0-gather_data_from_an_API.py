@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Module of Gather data from an API"""
 
 if __name__ == '__main__':
     import requests
