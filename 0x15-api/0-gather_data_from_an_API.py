@@ -5,5 +5,5 @@ if __name__ == '__main__':
     import sys
 
     r = requests.get('https://jsonplaceholder.typicode.com/todos/{}'.format(sys.argv[1]))
-    print(r.status_code)
+    print(r.json)
     pass
