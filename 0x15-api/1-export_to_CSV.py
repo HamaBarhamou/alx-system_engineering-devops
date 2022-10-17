@@ -14,7 +14,11 @@ if __name__ == '__main__':
                      .format(sys.argv[1]))
     reponse = r.json()
 
-    filename = sys.argv[1] + 'csv'
-    for loop in reponse:
-        #print("\"{}\",\"{}\",\"{}\",\"{}\"".format(sys.argv[1], EMPLOYEE_NAME, loop.get('completed'), loop.get('title')))
-        print(loop)
+    filename = sys.argv[1] + '.csv'
+    with open(filename, mode='w') as f:
+        writer = csv.writer(f, delimiter=',', quotechar='"',
+                            quoting=csv.QUOTE_ALL, lineterminator='\n')
+        for loop in reponse:
+            writer.writerow([sys.argv[1], EMPLOYEE_NAME,
+                             str(loop.get('completed')),
+                             loop.get('title')])
