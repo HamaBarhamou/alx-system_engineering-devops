@@ -25,4 +25,4 @@ if __name__ == '__main__':
 
     for loop in reponse:
         if loop.get('completed'):
-            print("  ", loop['title'])
+            print("\t ", loop.get('title'))
