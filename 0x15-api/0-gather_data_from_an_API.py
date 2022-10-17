@@ -23,4 +23,5 @@ if __name__ == '__main__':
          EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
 
     for loop in reponse:
-        print("  ", loop['title'])
+        if loop['completed']:
+            print("  ", loop['title'])
